@@ -3,7 +3,7 @@
     <nav class="navbar-collapse">
         <div class="container-fluid">
             <div class="navbar-header">
-                <strong class="text-center">my hour sys</strong>
+                <strong class="text-center">Sistema horario</strong>
             </div>
         </div>
     </nav>
@@ -12,38 +12,38 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li>
-                    <a onclick="welcome_message()">
+                    <a onclick="/../home_view">
                         <i class="glyphicon glyphicon-home"></i>
                         <span>INICIO</span>
                     </a>
                 </li>
                 <li>
                     <a onclick="ExperienciaEducativa()">
-                        <i class="glyphicon glyphicon-ice-lolly"></i>
+                        <i class="glyphicon glyphicon-book"></i>
                         <span>E.EDUCATIVA</span>
                     </a>
                 </li>
                 <li>
                     <a onclick="Maestros()">
-                        <i class="glyphicon glyphicon-ice-lolly"></i>
+                        <i class="glyphicon glyphicon-book"></i>
                         <span>MAESTROS</span>
                     </a>
                 </li>
                 <li>
                     <a onclick="Carrera()">
-                        <i class="glyphicon glyphicon-ice-lolly"></i>
+                        <i class="glyphicon glyphicon-book"></i>
                         <span>CARRERAS</span>
                     </a>
                 </li>
                 <li>
-                    <a onclick="Horario()">
-                        <i class="glyphicon glyphicon-ice-lolly"></i>
+                    <a onclick="../horarios()">
+                        <i class="glyphicon glyphicon-book"></i>
                         <span>HORARIO</span>
                     </a>
                 </li>
                 <li>
-                    <a onclick="Salon()">
-                        <i class="glyphicon glyphicon-ice-lolly"></i>
+                    <a onclick="../TSalon()">
+                        <i class="glyphicon glyphicon-book"></i>
                         <span>SALON</span>
                     </a>
                 </li>
