@@ -1,0 +1,6 @@
+#div1
+{float:left; width:100%; min-height:200px; height: 100%; margin:10px;padding:10px;border:1px solid #aaaaaa;}
+.segmento-horario
+{float:left; width:90%; min-height:50px; height: 100%; margin:5%;padding:5%;border:1px solid #aaaaaa;background-color: #b2d3ff;}
+.asignatura
+{background-color: #adffa4;border-radius: 5%;margin:5%}
