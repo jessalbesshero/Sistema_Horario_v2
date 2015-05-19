@@ -1,0 +1,41 @@
+#destino1, #destino2, #destino3, #destino4, #destino5, #destino6{
+
+	height:450px;
+	padding:10px;
+	
+}
+#des1, #des2, #des3, #des4, #des5, #des6{
+
+	height:850px;
+	padding:10px;
+	
+}
+
+#arrastrable1,#arrastrable2,#arrastrable3,#arrastrable4,#ar1,#ar2,#ar3,#ar4,#ar5,#ar6,#ar7,#ar8,#ar9,#ar10,#ar11{
+	
+	height: 70px;
+	padding: 5px;
+	margin: 5px;
+}
+
+#destino1{
+	background-color: #8070ff;
+}
+#destino2{
+	background-color: #8070ff;
+}
+#destino3 {
+	background-color: #8070ff;
+}
+#arrastrable1,#ar1,#ar2,#ar3,#ar4,#ar5,#ar6,#ar7,#ar8,#ar9,#ar10,#ar11{
+	background-color: #FE74FF;
+}
+#arrastrable2{
+	background-color: #FE04FF;
+}
+#arrastrable3{
+	background-color: #E8E588;
+}
+#arrastrable4{
+	background-color: #DD04FF;
+}
