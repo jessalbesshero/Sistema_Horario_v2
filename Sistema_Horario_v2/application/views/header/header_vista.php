@@ -11,42 +11,42 @@
     <div role="navigation">
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <li>
+                <ul>
                     <a onclick="/../home_view">
                         <i class="glyphicon glyphicon-home"></i>
                         <span>INICIO</span>
                     </a>
-                </li>
-                <li>
+                </ul>
+                <ul>
                     <a onclick="ExperienciaEducativa()">
                         <i class="glyphicon glyphicon-book"></i>
                         <span>E.EDUCATIVA</span>
                     </a>
-                </li>
-                <li>
+                </ul>
+                <ul>
                     <a onclick="Maestros()">
                         <i class="glyphicon glyphicon-book"></i>
                         <span>MAESTROS</span>
                     </a>
-                </li>
-                <li>
+                </ul>
+                <ul>
                     <a onclick="Carrera()">
                         <i class="glyphicon glyphicon-book"></i>
                         <span>CARRERAS</span>
                     </a>
-                </li>
-                <li>
+                </ul>
+                <ul>
                     <a onclick="../horarios()">
                         <i class="glyphicon glyphicon-book"></i>
                         <span>HORARIO</span>
                     </a>
-                </li>
-                <li>
+                </ul>
+                <ul>
                     <a onclick="../TSalon()">
                         <i class="glyphicon glyphicon-book"></i>
                         <span>SALON</span>
                     </a>
-                </li>
+                </ul>
             </ul>
         </div>
     </div>
