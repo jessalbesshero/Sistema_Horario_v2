@@ -1,32 +1,42 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
+//* @Torres Cruz
+//* @Rodríguez Hernández
 class Welcome extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -  
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in 
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
-	 */
 	function __construct()
  	{
    	parent::__construct();
-   		$this->load->model('principalmodel');		
+   		$this->load->model('modelo_Horarios');		
+ 	}
+        
+        //Cambiar la página de inicio: Login------------------------------------
+        public function index()
+	{
+            $this->load->view('add_Salon');
+            //$this->load->view('view_Principal');
+	}
+        
+        //Página principal------------------------------------------------------
+        public function home(){
+ 		//$this->load->view('head/head_vista');
+                //$this->load->view('header/header_vista');
+		$this->load->view('view_Principal');
+		//$this->load->view('footer/footer_vista');
+ 	}
+        
+        //Información del sistema-----------------------------------------------
+        public function acerca_de(){
+		$this->load->view('acerca_de');
  	}
 
-	public function horario(){	
-		$this->load->view('DDHorario');
+        //Horario:--------------------------------------------------------------
+	public function vista_horario(){	
+		$this->load->view('view_Horario');
 	}
-
+//las funciones get_info_horario() y web_service() quedan simplificadas en:
+//vista_horario() pero aún se esta tratando de modificar 
+//@Sirio
+//@Jesús
  	public function get_info_horario(){
  		$salon = $_POST['salon'];
  		$this->db->select('Dia,Hora,NCR');
@@ -99,12 +109,7 @@ class Welcome extends CI_Controller {
  		$this->db->insert('horario', $data); 
  		echo 'EXITO!';
  	}
-	
-	public function index()
-	{
-		$this->load->view('DDHorario');
-	}
-
+//Función salir aún sin probar
 	public function salir(){
  		$this->db->where('Logeado','1');
  		$prueba= $this->db->get('usuarios');
@@ -119,52 +124,58 @@ class Welcome extends CI_Controller {
  			}
  		}
  	}
-
- 	public function falta(){
- 		$this->load->view('headers/librerias');
-		$this->load->view('falta');
-		$this->load->view('headers/footer');
- 	}
-
- 	public function home(){
- 		$this->load->view('headers/librerias');
-		$this->load->view('home_view');
-		$this->load->view('headers/footer');
- 	}
-
-	public function curso(){
-		$this->load->view('headers/librerias');
-		$this->load->view('Tcurso');
-		$this->load->view('headers/footer');
+        
+//En caso de tratar de acceder a un recurso no disponible
+//Aún no quedá finalizada la función
+ 	public function error_001(){
+		$this->load->view('error_001');
+ 	}      
+        
+//Funciones de Agregar, Editar, Eliminar y Vistas:
+        
+        //Cursos:--------------------------------------------------------------
+        public function agregar_curso(){
+		$this->load->view('add_Curso');
 	}
 
-	public function tmaterias(){
-		$this->load->view('headers/librerias');
-		$this->load->view('TMaterias');
-		$this->load->view('headers/footer');
+        	public function editar_Curso(){
+		$NRC= $this->uri->segment(3);
+		$obtenerDatos= $this->modelo_Horarios->obtenerDatosCu($NRC);
+		if($obtenerDatos != False){
+			foreach ($obtenerDatos->result() as $key) {
+					$IDA= $key->IDA;
+					$IDM= $key->IDM;
+			}
+			$data = array(
+				'NRC'=>$NRC,
+				'IDA'=>$IDA,
+				'IDM'=>$IDM
+				);
+		}else{
+			return FALSE;
+		}
+		$this->load->view('edit_Curso',$data);
+	}
+        
+        public function eliminar_Curso(){
+			$NRC = $this->uri-> segment(3);
+			$this->modelo_Horarios->EliminarCu($NRC);
+
+			$this->load->view('home_Curso');
+	}
+        
+	public function vista_curso(){
+		$this->load->view('home_Curso');
 	}
 
-	public function agmate(){
-		$this->load->view('headers/librerias');
-		$this->load->view('insertarMaterias');
-		$this->load->view('headers/footer');
+        //Materias:-------------------------------------------------------------
+	public function agregar_materias(){
+		$this->load->view('add_Materias');
 	}
-
-	public function agcurso(){
-		$this->load->view('headers/librerias');
-		$this->load->view('insertarCurso');
-		$this->load->view('headers/footer');
-	}
-
-	public function agmaest(){
-		$this->load->view('headers/librerias');
-		$this->load->view('insertarMaestro');
-		$this->load->view('headers/footer');
-	}
-
-	public function editarMaterias(){
+        
+	public function editar_Materias(){
 		$IDA = $this->uri->segment(3);
-		$obtenerDatos= $this->principalmodel->obtenerDatosA($IDA);
+		$obtenerDatos= $this->modelo_Horarios->obtenerDatosA($IDA);
 		if($obtenerDatos != FALSE){
 			foreach ($obtenerDatos->result() as $row){
 				
@@ -185,60 +196,28 @@ class Welcome extends CI_Controller {
 		}else{
 			return FALSE;
 		}
-		$this->load->view('headers/librerias');
-		$this->load->view('editarMaterias',$data);
-		$this->load->view('headers/footer');
-
+		$this->load->view('edit_Materias',$data);
 	}
-
-	public function editarCurso(){
-		$NRC= $this->uri->segment(3);
-		$obtenerDatos= $this->principalmodel->obtenerDatosCu($NRC);
-		if($obtenerDatos != False){
-			foreach ($obtenerDatos->result() as $key) {
-					$IDA= $key->IDA;
-					$IDM= $key->IDM;
-			}
-			$data = array(
-				'NRC'=>$NRC,
-				'IDA'=>$IDA,
-				'IDM'=>$IDM
-				);
-		}else{
-			return FALSE;
-		}
-		$this->load->view('headers/librerias');
-		$this->load->view('editarCurso',$data);
-		$this->load->view('headers/footer');
-	}
-
-	public function eliminarMaterias(){
+        
+        public function eliminar_Materias(){
 			$IDA = $this->uri-> segment(3);
-			$this->principalmodel->EliminarA($IDA);
+			$this->modelo_Horarios->EliminarA($IDA);
 
-			$this->load->view('headers/librerias');
-			$this->load->view('TMaterias');
-			$this->load->view('headers/footer');
+			$this->load->view('home_Materias');
+	}
+        
+        public function vista_materias(){
+		$this->load->view('home_Materias');
 	}
 
-	public function eliminarCurso(){
-			$NRC = $this->uri-> segment(3);
-			$this->principalmodel->EliminarCu($NRC);
-
-			$this->load->view('headers/librerias');
-			$this->load->view('Tcurso');
-			$this->load->view('headers/footer');
+        //Maestro:--------------------------------------------------------------
+	public function agregar_maestro(){
+		$this->load->vie('add_Maestro');
 	}
 
-	public function tmaes(){
-		$this->load->view('headers/librerias');
-		$this->load->view('TMaestros');
-		$this->load->view('headers/footer');
-	}
-	
-	public function editarMaestro(){
+        public function editar_Maestro(){
 		$IDM = $this->uri->segment(3);
-		$obtenerDatos= $this->principalmodel->obtenerDatosMa($IDM);
+		$obtenerDatos= $this->modelo_Horarios->obtenerDatosMa($IDM);
 		if($obtenerDatos != FALSE){
 			foreach ($obtenerDatos->result() as $row){
 				
@@ -255,20 +234,40 @@ class Welcome extends CI_Controller {
 		}else{
 			return FALSE;
 		}
-		$this->load->view('headers/librerias');
-		$this->load->view('editarMaestro',$data);
-		$this->load->view('headers/footer');
+		$this->load->view('edit_Maestro',$data);
 
 	}
-	public function eliminarMaestro(){
+        
+        public function eliminar_Maestro(){
 		$IDM = $this->uri-> segment(3);
-		$this->principalmodel->EliminarMa($IDM);
+		$this->modelo_Horarios->EliminarMa($IDM);
 
-		$this->load->view('headers/librerias');
-		$this->load->view('TMaestros');
-		$this->load->view('headers/footer');
+		$this->load->view('home_Maestro');
+	}
+        
+        public function vista_maestro(){
+		$this->load->view('home_Maestro');
+	}
+        
+        //Salón:----------------------------------------------------------------
+        public function agregar_Salon(){
+		$this->load->vie('add_Salon');
+	}
+        
+        public function editar_Salon(){
+            //Pendiente
+        }
+        
+        public function eliminar_Salon(){
+			$NRC = $this->uri-> segment(3);
+			$this->modelo_Horarios->EliminarCu($NRC);
+
+			$this->load->view('home_Salon');
+	}
+        
+        public function vista_Salon(){
+		$this->load->view('home_Salon');
 	}
 }
-
 /* End of file welcome.php */
 /* Location: ./application/controllers/welcome.php */

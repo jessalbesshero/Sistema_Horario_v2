@@ -2,20 +2,25 @@
     $this->load->view('head/head_vista');
     $this->load->view('header/header_vista');
 ?>
+<!--
+Vista Maestros:
+@Sirio
+@Jesús
+-->
 <div id="body">
 <div class="container">
-  <h1>Asignaturas</h1>
+  <h1  style="background-color: #dddddd">Experiencias Educativas</h1>
   <table class="table table-striped" style="text-align:center" >
            <thead>
               <tr>
-                  <th style="text-align:center" >IDMateria:</th>
-                  <th style="text-align:center" >Asignatura:</th>
+                  <th style="text-align:center" >NRC:</th>
+                  <th style="text-align:center" >Experiencia Educativa:</th>
                   <th style="text-align:center" >Carrera:</th>
                   <th style="text-align:center" >Horas</th>
-                  <th style="text-align:center" >Requerimientos</th>
+                  <th style="text-align:center" >Requisitos Previos</th>
                   <th style="text-align:center" >Creditos</th>
-                  <th style="text-align:center" >Eliminar</th>
                   <th style="text-align:center" >Editar</th>
+                  <th style="text-align:center" >Eliminar</th>
              </tr>
            </thead>
            <tbody>

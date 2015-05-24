@@ -3,7 +3,7 @@
 ?>
 <div>
 
-<form id="login" method="POST" class="form-inline" role="form" >
+<form id="login" method="POST" class="form-inline" role="form" style="text-align: center">
 	<br></br>
 	<br></br>
 	<br></br>

@@ -2,24 +2,7 @@
     $this->load->view('head/head_vista');
     $this->load->view('header/header_vista');
 ?>
-    <div class="container">
-      <ul class="pagination">
-        <div class="row">
-          <h2 id="info-salon" class="text-center">Salon:
-          <?php
-          $query =$this->db->get('salon');
-          echo $query->result()[0]->Salón;
-          ?>
-          </h2>
-        </div>
-        <?php
-        $query =$this->db->get('salon');
-        foreach ($query->result() as $key => $row) {
-        echo '<li><a id="'.$key.'" data-id="'.$row->Salón.'" href="#" class="btn_salon">'.$row->Salón.'</a><li>';
-        }
-        ?>
-      </ul>
-    </div>
+<!-- Drag&Drop @Sirio -->
     <div class="row">
       <div class="col-sm-1">
         <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
@@ -71,6 +54,25 @@
       </div>
     </div>
   </div>
+<!-- Salon: #salón @Jesús -->
+<div class="container">
+      <ul class="pagination">
+        <div class="row">
+          <h3 id="info-salon" class="text-aligne-center">Salón:
+            <?php
+            $query =$this->db->get('salon');
+            echo $query->result()[0]->Salón;
+            ?>
+          </h3>
+        </div>
+        <?php
+        $query =$this->db->get('salon');
+        foreach ($query->result() as $key => $row) {
+        echo '<li><a id="'.$key.'" data-id="'.$row->Salón.'" href="#" class="btn_salon">'.$row->Salón.'</a><li>';
+        }
+        ?>
+      </ul>
+    </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   <script src="http://localhost/Sistema_Horario_v2/Sistema_Horario_v2/js/my.js"></script>

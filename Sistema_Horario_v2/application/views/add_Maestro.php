@@ -3,12 +3,8 @@
     $this->load->view('header/header_vista');
 ?>
 <div id="body">
-
-	<div  class= "jumbotron"> 
-		<h1 style="font-size: 50pt">Agregar Maestro</h1>
-	</div>
-	<div class="container">
-		
+    <div class='container'>
+	<h1 style="background-color: #dddddd">Agregar Maestro</h1>	
 		<form method="POST" >
 			<table class="table table-hover" >
 				<tr>
@@ -53,10 +49,10 @@
 			$this->db->where('IDM',$IDM);
 			$prueba= $this->db->get('Maestros');
 			if($prueba->num_rows() > 0){
-				redirect('welcome/inserMaestro');
+				redirect('welcome/add_Maestro');
 			}else{
 				$this->db->insert('Maestros',$data);
-				redirect('welcome/tmaes');
+				redirect('welcome/home_Maestros');
 			}
 		}
 	?>	

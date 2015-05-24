@@ -3,12 +3,8 @@
     $this->load->view('header/header_vista');
 ?>
 <div id="body">
-	
-	<div  class= "jumbotron" > 
-		<h1 style="font-size: 50pt">Actualizacion de Maestros</h1>
-	</div>
-	<div class="container">
-		
+    <div class="container">
+	<h1  style="background-color: #dddddd">Editar Maestro</h1>	
 		<form method="POST">
 			<table class="table table-hover" >
 				<tr>
@@ -42,7 +38,7 @@
 				);
 			$this->db->where('IDM',$IDM);
 			$this->db->update('Maestros',$data);
-			redirect('welcome/tmaes');
+			redirect('welcome/home_Maestro');
 		}
 	?>	
 	<?php $this->load->view('footer/footer_vista');?>

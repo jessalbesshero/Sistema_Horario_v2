@@ -1,6 +1,6 @@
     <footer>
-        <p>&copy; Sistema creado en la UV por estudiantes de la Licenciatura en Informática:</p>
-	<p>@AlumnosUV</p>
+        <p style="text-align: center">&copy; Alumnos de la Universidad Veracruzana</p>
+        <p style="text-align: center">&copy; Licenciatura en Informática</p>
     </footer>
 </body>
 </html>

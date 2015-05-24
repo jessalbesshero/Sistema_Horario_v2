@@ -1,19 +1,23 @@
 <?php
+/*
+ * Vista curso
+ * @Sirio
+ * @Jesús
+ */
     $this->load->view('head/head_vista');
     $this->load->view('header/header_vista');
 ?>
 <div id="body">
-	
-<div class='container' style='background-color:'>
-	<h1>Cursos</h1>
-	<table class="table table-condensed">
+    <div class='container'>
+        <h1 style="background-color: #dddddd">Cursos</h1>
+        <table class="table table-striped" style="text-align:center">
 		<thead >
 			<tr>
 				<th style="text-align:center">NCR</th>
-				<th style="text-align:center">Asignatura</th>
+				<th style="text-align:center">Experiencia Educativa</th>
 				<th style="text-align:center">Maestro</th>
-				<th style="text-align:center"></th>
-				<th style="text-align:center"></th>
+				<th style="text-align:center">Editar</th>
+				<th style="text-align:center">Eliminar</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -38,7 +42,7 @@
 									echo "<td>".$rowc->Nombre." ".$rowc->ApellidoP." ".$rowc->ApellidoM."</td>";	
 								}
 							}else{
-								echo "<td>No hay maestro para esta ".$row->NRC."</td>";
+								echo "<td>Sin maestro ".$row->NRC."</td>";
 							}
 							echo "<td><a href='".base_url()."index.php/welcome/editarCurso/".$row->NRC."' class='label label-info'><span class='glyphicon glyphicon-pencil'></a></span></td>";
 							echo "<td><a href='".base_url()."index.php/welcome/eliminarCurso/".$row->NRC."' class='label label-danger'><span class='glyphicon glyphicon-remove'></a></span></td>";

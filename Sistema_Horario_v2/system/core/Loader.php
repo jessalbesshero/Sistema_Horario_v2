@@ -1181,9 +1181,9 @@ class CI_Loader {
 		}
 
 		// Autoload models
-		if (isset($autoload['model']))
+		if (isset($autoload['modelo_Horarios']))
 		{
-			$this->model($autoload['model']);
+			$this->model($autoload['modelo_Horarios']);
 		}
 	}
 

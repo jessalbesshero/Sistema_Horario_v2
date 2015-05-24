@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/Sistema_Horario_v2/Sistema_Horario_v2';
+$config['base_url']	= 'http://localhost/Sistema_Horario_v2/Sistema_Horario_v2/Sistema_Horario_v2/';
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ $config['base_url']	= 'http://localhost/Sistema_Horario_v2/Sistema_Horario_v2';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------

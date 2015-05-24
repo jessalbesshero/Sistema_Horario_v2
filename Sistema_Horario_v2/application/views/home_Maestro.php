@@ -2,10 +2,14 @@
     $this->load->view('head/head_vista');
     $this->load->view('header/header_vista');
 ?>
+<!--
+Vista Maestros:
+@Sirio
+@Jesús
+-->
 <div id="body">
 <div class="container">
-<h1>Maestros</h1>
-
+<h1 style="background-color: #dddddd">Maestros</h1>
 <table class="table table-striped" style="text-align:center" >
          <thead>
             <tr>
@@ -49,7 +53,6 @@
             ?>
 </tbody>
 </table>
-
 </div>
 <?php $this->load->view('footer/footer_vista');?>
 

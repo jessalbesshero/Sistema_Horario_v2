@@ -4,7 +4,10 @@
 ?>
 <div id="body">
 	<div class="jumbotron" style="text-align:center;background: #FFF500;">
-    	<h1>Fuera de servicio</h1>     
+    	<h1>Error 001</h1>
+        <p>
+            Usuario ha intentado acceder a un recurso no disponible.
+        </p>
   	</div>
 <div class="container">
 	

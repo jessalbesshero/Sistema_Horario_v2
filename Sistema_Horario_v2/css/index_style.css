@@ -1,7 +1,7 @@
 *{
 	margin:0px;
 	padding:0px;
-	font-family: ;
+	font-family: arial;
 	font-weight: lighter;
 }
 nav#top{
@@ -135,7 +135,7 @@ div#body{
 	margin-left: 200px;
 	margin-top: 50px;
 	margin-bottom: 10px
-	background-color: white;
+	background-color: blue;
 }
 #icon{
 	margin-top: 4px;

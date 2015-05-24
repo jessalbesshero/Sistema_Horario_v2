@@ -3,12 +3,8 @@
     $this->load->view('header/header_vista');
 ?>
 <div id="body">
-
-	<div  class= "jumbotron"> 
-		<h1 style="font-size: 50pt">Agregar Asignaturas</h1>
-	</div>
-	<div class="container">
-		
+    <div class="container">
+	<h1 style="background-color: #dddddd">Agregar Experiencias Educativas</h1>
 		<form method="POST" >
 			<table class="table table-hover" >
 				<tr>
@@ -61,10 +57,10 @@
 			$this->db->where('IDA',$IDA);
 			$prueba= $this->db->get('Asignatura');
 			if($prueba->num_rows() > 0){
-				redirect('welcome/agmate');
+				redirect('welcome/add_Materias');
 			}else{
 				$this->db->insert('asignatura',$data);
-				redirect('welcome/tmaterias');
+				redirect('welcome/home_Materias');
 			}
 		}
 	?>	
