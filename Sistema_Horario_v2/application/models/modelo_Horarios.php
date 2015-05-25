@@ -1,10 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /* 
+ * modelo_Horarios: Modelo del sistema horarios versión 2
+ *  Modelo MVC Sistema_Horarios_v2 
+ * @Sirio 
+ * @Jesús
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
- * Modelo MVC Sistema_Horarios_v2 @Sirio @Jesús
- *  
  */
 
 class modelo_Horarios extends CI_Model { 

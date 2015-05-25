@@ -1,8 +1,8 @@
-<?php
-    
+<?php  
 /* 
- * Sirio
- * Jesús
+ * acerca_de: Breve descripción del sistema de horariosv2.
+ * @Sirio
+ * @Jesús
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -23,6 +23,5 @@
         <img src='<?=base_url()."img/fei.jpg"?>'>
     </p>
 </div>
-
 <?php $this->load->view('footer/footer_vista');?>
 

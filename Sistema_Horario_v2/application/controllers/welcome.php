@@ -1,6 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-//* @Torres Cruz
-//* @Rodríguez Hernández
+/*
+ * welcome: Control principal del sistema horarios v2
+ * @Sirio
+ * @Jesús
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 class Welcome extends CI_Controller {
 
 	function __construct()
