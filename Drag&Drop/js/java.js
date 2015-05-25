@@ -31,14 +31,14 @@
 }
 )
 */
-/*function drop(e){
+function drop(e){
     var esarrastrable = e.dataTransfer.getData("Data");
 	e.target.appendChild(document.getElementById(esarrastrable));
 	e.stopPropagation();
     return false;
 }
 			
-/*function end(e){
+function end(e){
     e.dataTransfer.clearData("Data");
-    return true
+    return true;
 }		
