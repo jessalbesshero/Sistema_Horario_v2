@@ -39,7 +39,7 @@
   float: left;
   -webkit-perspective: 1000px;
   -moz-perspective: 1000px;
-  perspective: 1000px;
+  -perspective: 1000px;
 }
 #cssmenu.align-center > ul {
   font-size: 0;
@@ -105,7 +105,7 @@
   -webkit-transform-origin: 50% 0;
   -moz-transform-origin: 50% 0;
   transform-origin: 50% 0;
-  -ms-transform: translateY(- -18px);
+  -ms-transform: translateY(-18px);
 }
 #cssmenu > ul > li:hover > a::before,
 #cssmenu > ul > li > a:hover::before {

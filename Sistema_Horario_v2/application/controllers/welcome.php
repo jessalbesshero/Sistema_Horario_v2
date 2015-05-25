@@ -18,7 +18,7 @@ class Welcome extends CI_Controller {
         //Cambiar la página de inicio: Login------------------------------------
         public function index()
 	{
-            $this->load->view('add_Salon');
+            $this->load->view('view_Principal');
             //$this->load->view('view_Principal');
 	}
         
