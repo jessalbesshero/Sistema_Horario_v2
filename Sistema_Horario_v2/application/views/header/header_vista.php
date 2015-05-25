@@ -111,7 +111,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="<?php$this->load->view('principal_vista');?>"><i class="glyphicon glyphicon-home"></i>Principal</a></li>
-                    <li><a href='<?=base_url()."views/TMaestros.php";?>'><i class="glyphicon glyphicon-book"></i>Maestros</a></li>
+                    <li><a href='<?=base_url()."application/views/home_Maestros.php";?>'><i class="glyphicon glyphicon-book"></i>Maestros</a></li>
                     <li><a href="#"><i class="glyphicon glyphicon-book"></i>Materias</a></li>
                     <li><a href="#"><i class="glyphicon glyphicon-book"></i>Salon</a></li>
                     <li><a href="#"><i class="glyphicon glyphicon-book"></i>Curso</a></li>
