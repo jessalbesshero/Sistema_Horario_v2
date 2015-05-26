@@ -69,19 +69,19 @@
           <h3 id="info-salon" class="text-aligne-center">Salón:
             <?php
             $query =$this->db->get('salon');
-            echo $query->result()[0]->Salón;
+            echo $query->result()[0]->salon;
             ?>
           </h3>
         </div>
         <?php
         $query =$this->db->get('salon');
         foreach ($query->result() as $key => $row) {
-        echo '<li><a id="'.$key.'" data-id="'.$row->Salón.'" href="#" class="btn_salon">'.$row->Salón.'</a><li>';
+        echo '<li><a id="'.$key.'" data-id="'.$row->salon.'" href="#" class="btn_salon">'.$row->salon.'</a><li>';
         }
         ?>
       </ul>
     </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-  <script src="http://localhost/Sistema_Horario_v2/Sistema_Horario_v2/js/my.js"></script>
+  <script src="http://localhost/Sistema_Horario_v2/Sistema_Horario_v2/Sistema_Horario_v2/js/my.js"></script>
     <?php $this->load->view('footer/footer_vista');?>

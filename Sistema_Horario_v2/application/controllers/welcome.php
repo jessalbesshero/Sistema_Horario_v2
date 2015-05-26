@@ -18,7 +18,7 @@ class Welcome extends CI_Controller {
         //Cambiar la página de inicio: Login------------------------------------
         public function index()
 	{
-            $this->load->view('view_Principal');
+            $this->load->view('view_Horario');
             //$this->load->view('view_Principal');
 	}
         
@@ -146,7 +146,7 @@ class Welcome extends CI_Controller {
 
         	public function editar_Curso(){
 		$NRC= $this->uri->segment(3);
-		$obtenerDatos= $this->modelo_Horarios->obtenerDatosCu($NRC);
+		$obtenerDatos= $this->modelo_Horarios->consulta_Curso($NRC);
 		if($obtenerDatos != False){
 			foreach ($obtenerDatos->result() as $key) {
 					$IDA= $key->IDA;
@@ -165,8 +165,7 @@ class Welcome extends CI_Controller {
         
         public function eliminar_Curso(){
 			$NRC = $this->uri-> segment(3);
-			$this->modelo_Horarios->EliminarCu($NRC);
-
+			$this->modelo_Horarios->eliminar_Curso($NRC);
 			$this->load->view('home_Curso');
 	}
         
@@ -207,8 +206,7 @@ class Welcome extends CI_Controller {
         
         public function eliminar_Materias(){
 			$IDA = $this->uri-> segment(3);
-			$this->modelo_Horarios->EliminarA($IDA);
-
+			$this->modelo_Horarios->eliminar_Asignatura($IDA);
 			$this->load->view('home_Materias');
 	}
         
@@ -246,8 +244,7 @@ class Welcome extends CI_Controller {
         
         public function eliminar_Maestro(){
 		$IDM = $this->uri-> segment(3);
-		$this->modelo_Horarios->EliminarMa($IDM);
-
+		$this->modelo_Horarios->eliminar_Maestros($IDM);
 		$this->load->view('home_Maestro');
 	}
         
@@ -261,13 +258,12 @@ class Welcome extends CI_Controller {
 	}
         
         public function editar_Salon(){
-            //Pendiente
+                $this->load->vie('edit_Salon');
         }
         
         public function eliminar_Salon(){
 			$NRC = $this->uri-> segment(3);
-			$this->modelo_Horarios->EliminarCu($NRC);
-
+			$this->modelo_Horarios->eliminar_Salon($NRC);
 			$this->load->view('home_Salon');
 	}
         

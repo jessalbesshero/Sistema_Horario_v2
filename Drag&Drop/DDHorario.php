@@ -23,7 +23,7 @@
 		<div class="row">
 			<div class="col-sm-2" id="des1" style="background-color: #C2ACE8;" ondragenter="return enter(event)" ondragover="return overs(event)" ondrop="return drop(event)">
 				 <?php 
-                $query =$this->db->get('curso');
+                $query = $this->db->get('curso');
                  if ($query->num_rows() > 0){
                     if( $query != FALSE ){
                         foreach ($query ->result() as $row) {

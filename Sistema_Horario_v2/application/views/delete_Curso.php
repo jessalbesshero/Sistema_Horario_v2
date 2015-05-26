@@ -1,6 +1,6 @@
 <?php
 /*
- * edit_Curso: Editar curso
+ * delete_Curso: Eliminar curso
  * @Sirio
  * @Jesús
  * To change this license header, choose License Headers in Project Properties.
@@ -12,7 +12,7 @@
 ?>
 <div id="body">
     <div class="container">
-        <h1 style="background-color: #dddddd"> Editar Curso</h1>
+        <h1 style="background-color: #dddddd"> Eliminar Curso</h1>
             <div class="row">
 		<div class="col-md-6">		
                     <form method="POST">
@@ -31,7 +31,7 @@
 				</tr>
 				<tr>
 					<td></br>
-						<input class="btn btn-warning btn-lg" type="submit" name="Editar" id="Editar" value="Editar"/></td>
+						<input class="btn btn-danger btn-lg" type="submit" name="Eliminar" id="Eliminar" value="Eliminar"/></td>
 				</tr>
                         </table>
                     </form>	
@@ -68,23 +68,15 @@
 		</div>		
 	</div>
 </div>
-
-	<?php 
-		if (isset($_POST['Editar'])){		
-			$NRC=$_POST['NRC'];
-                        $IDA=$_POST['IDA'];
-                        $IDM=$_POST['IDM'];
-			$data=array(
-				'NRC'=>$NRC,
-                                'IDA'=>$IDA,
-				'IDM'=>$IDM
-				);
-                        $this->db->update('curso');
-                        $this->db->set('IDA='.$IDA.'IDM='.$IDM);
-                        $this->db->where('NRC='.$NRC);
-			//$this->db->where('NRC',$NRC,'IDA',$IDA,'IDM',$IDM);
-			//$this->db->update('curso',$data);
-			redirect('welcome/home_Curso');
-		}
-	?>	
+<?php 
+    if (isset($_POST['Eliminar'])){		
+	$NRC=$_POST['NRC'];
+	$data=array(
+            'NRC'=>$NRC,
+	);
+        $this->db->where('NRC',$NRC);
+        $this->db->delete('curso');
+	redirect('welcome/home_Curso');
+    }
+?>	
 <?php $this->load->view('footer/footer_vista');?>

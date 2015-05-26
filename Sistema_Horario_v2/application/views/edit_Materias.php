@@ -16,7 +16,7 @@
 		<form method="POST">
 			<table class="table table-hover" >
 				<tr>
-					<td><label for="Asignatura">Nombre de la Asignatura :</label></td>
+					<td><label for="Asignatura">Nombre de la Experiencia Educativa:</label></td>
 					<td><input type="text"  name="Asignatura" id="Asignatura" value="<?php echo $Asignatura;?>"/></td>
 				</tr>
 				<tr>
