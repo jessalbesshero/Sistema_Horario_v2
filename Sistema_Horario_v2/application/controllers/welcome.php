@@ -18,7 +18,7 @@ class Welcome extends CI_Controller {
         //Cambiar la página de inicio: Login------------------------------------
         public function index()
 	{
-            $this->load->view('view_Horario');
+            $this->load->view('view_Principal');
             //$this->load->view('view_Principal');
 	}
         
@@ -180,7 +180,7 @@ class Welcome extends CI_Controller {
         
 	public function editar_Materias(){
 		$IDA = $this->uri->segment(3);
-		$obtenerDatos= $this->modelo_Horarios->obtenerDatosA($IDA);
+		$obtenerDatos= $this->modelo_Horarios->consulta_Asignatura($IDA);
 		if($obtenerDatos != FALSE){
 			foreach ($obtenerDatos->result() as $row){
 				
@@ -254,11 +254,11 @@ class Welcome extends CI_Controller {
         
         //Salón:----------------------------------------------------------------
         public function agregar_Salon(){
-		$this->load->vie('add_Salon');
+		$this->load->view('add_Salon');
 	}
         
         public function editar_Salon(){
-                $this->load->vie('edit_Salon');
+                $this->load->view('edit_Salon');
         }
         
         public function eliminar_Salon(){
@@ -269,6 +269,25 @@ class Welcome extends CI_Controller {
         
         public function vista_Salon(){
 		$this->load->view('home_Salon');
+	}
+        
+        //Carrera:----------------------------------------------------------------
+        public function agregar_Carrera(){
+		$this->load->view('add_Carrera');
+	}
+        
+        public function editar_Carrera(){
+                $this->load->view('edit_Carrera');
+        }
+        
+        public function eliminar_Carrera(){
+			$NRC = $this->uri-> segment(3);
+			$this->modelo_Horarios->eliminar_Carrera($NRC);
+			$this->load->view('home_Carrera');
+	}
+        
+        public function vista_Carrera(){
+		$this->load->view('home_Carrera');
 	}
 }
 /* End of file welcome.php */

@@ -30,7 +30,7 @@
 					<td><input type="text"  name="IDM" id="IDM" /></td>
 				</tr>
 				<tr>
-					<td></br>
+					<td>
 						<input class="btn btn-warning btn-lg" type="submit" name="Editar" id="Editar" value="Editar"/></td>
 				</tr>
                         </table>
@@ -75,15 +75,11 @@
                         $IDA=$_POST['IDA'];
                         $IDM=$_POST['IDM'];
 			$data=array(
-				'NRC'=>$NRC,
                                 'IDA'=>$IDA,
 				'IDM'=>$IDM
 				);
-                        $this->db->update('curso');
-                        $this->db->set('IDA='.$IDA.'IDM='.$IDM);
-                        $this->db->where('NRC='.$NRC);
-			//$this->db->where('NRC',$NRC,'IDA',$IDA,'IDM',$IDM);
-			//$this->db->update('curso',$data);
+                        $this->db->where('NRC',$NRC);
+                        $this->db->update('curso', $data);
 			redirect('welcome/home_Curso');
 		}
 	?>	

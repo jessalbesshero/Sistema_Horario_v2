@@ -48,20 +48,20 @@
 	</div>
 	<?php 
 		if (isset($_POST['Insertar'])){
-			    $IDA= $this->input->post('IDA');
-			    $Asignatura= $this->input->post('Asignatura');
-				$Carrera=$this->input->post('Carrera');
-				$Horas=$this->input->post('Horas');
-				$Requerimientos=$this->input->post('Requerimientos');
-				$Creditos=$this->input->post('Creditos');
-				$data=array(
-					'IDA'=>$IDA,
-					'Asignatura'=>$Asignatura,
-					'Carrera'=>$Carrera,
-					'Horas'=>$Horas,
-					'Requerimiento'=>$Requerimientos,
-					'Creditos'=>$Creditos,
-					);
+			$IDA= $this->input->post('IDA');
+			$Asignatura= $this->input->post('Asignatura');
+			$Carrera=$this->input->post('Carrera');
+			$Horas=$this->input->post('Horas');
+			$Requerimientos=$this->input->post('Requerimientos');
+			$Creditos=$this->input->post('Creditos');
+			$data=array(
+				'IDA'=>$IDA,
+				'Asignatura'=>$Asignatura,
+				'Carrera'=>$Carrera,
+				'Horas'=>$Horas,
+				'Requerimiento'=>$Requerimientos,
+				'Creditos'=>$Creditos,
+			);
 			$this->db->where('IDA',$IDA);
 			$prueba= $this->db->get('Asignatura');
 			if($prueba->num_rows() > 0){

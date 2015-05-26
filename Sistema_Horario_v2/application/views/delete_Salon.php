@@ -30,7 +30,7 @@
 					<td><input type="text"  name="Horario" id="Horario "/></td>
 				</tr>
 				<tr>
-					<td></br>
+					<td>
 						<input class="btn btn-danger btn-lg" type="submit" name="Eliminar" id="Eliminar" value="Eliminar"/></td>
 				</tr>
 			</table>

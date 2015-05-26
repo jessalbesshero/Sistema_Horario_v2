@@ -13,49 +13,74 @@
 <div id="body">
     <div class="container">
         <h1  style="background-color: #dddddd">Editar Salón</h1>
-        <form method="POST" >
+        <div class="row">
+		<div class="col-md-6">		
+                    <form method="POST">
 			<table class="table table-hover" >
-				<tr>
-					<td><label for="IDS">ID Salón:</label></td>
+                                <tr>
+					<td><label for="IDS">ID del salón:</label></td>
 					<td><input type="text"  name="IDS" id="IDS"/></td>
 				</tr>
 				<tr>
-					<td><label for="Salon">Número de salón:</label></td>
+					<td><label for="Salon">Salón:</label></td>
 					<td><input type="text"  name="Salon" id="Salon"/></td>
 				</tr>
 				<tr>
-					<td><label for="Horario">Horario: </label></td>
-					<td><input type="text"  name="Horario" id="Horario" /></td>
+					<td><label for="Horario">Horario de clases:</label></td>
+					<td><input type="text"  name="Horario" id="Horario "/></td>
 				</tr>
 				<tr>
-					<td></br>
-						<input class="btn btn-success btn-lg" type="submit" name="Insertar" id="Insertar" value="Insertar"/></td>
+					<td>
+						<input class="btn btn-warning btn-lg" type="submit" name="Editar" id="Editar" value="Editar"/></td>
 				</tr>
 			</table>
-		</form>
+                    </form>
+		</div>
+		<div class="col-md-6">
+				<div id="iframe">
+					<table class="table table-hover">
+						<thead>
+				            <tr>
+				                <th style="text-align:center" >ID del salón:</th>
+				                <th style="text-align:center" >Salón:</th>
+				                <th style="text-align:center" >Horario de clases:</th>
+				           </tr>
+        				</thead>
+        				<tbody>
+					<?php
+                                            $query= $this->db->get('salon');
+                                            if($query->num_rows() > 0){
+                                            if($query != FALSE){
+                                                    foreach ($query ->result() as $row){
+                                                        echo "<tr>";
+                                                        echo "<td style='text-align: center'>".$row->IDS."</td>";
+                                                        echo "<td style='text-align: center'>".$row->Salon." "."</td>";
+                                                        echo "<td style='text-align: center'>".$row->Horario." "."</td>";
+                                                        echo "</tr>";
+                                                    }
+                                                }
+                                            }
+					?>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>		
 	</div>
+</div>
 	<?php 
-		if (isset($_POST['Insertar'])){
-                    $IDS= $this->input->post('IDS');
-		    $Salon= $this->input->post('Salon');
-                    $Horario=$this->input->post('Horario');
-                    echo $IDS;
-                    echo $Salon;
-                    echo $Horario;
+		if (isset($_POST['Editar'])){
+                    $IDS=$_POST['IDS'];
+		    $Salon=$_POST['Salon'];
+                    $Horario=$_POST['Horario'];
                     $data=array(
-			'IDS'=>$IDS,
 			'Salon'=>$Salon,
 			'Horario'=>$Horario
                     );
-			$this->db->where('IDS',$IDS);
-			$prueba= $this->db->get('salon');
-			if($prueba->num_rows() > 0){
-				redirect('welcome/add_Salon');
-			}else{
-				$this->db->insert('salon',$data);
-				redirect('welcome/home_Salon');
-			}
-		}
+		$this->db->where('IDS',$IDS);
+                $this->db->update('salon', $data);
+		redirect('welcome/home_Salon');
+                }
 	?>
 <?php $this->load->view('footer/footer_vista');?>
 

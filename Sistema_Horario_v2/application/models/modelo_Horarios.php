@@ -92,4 +92,9 @@ class modelo_Horarios extends CI_Model {
         $this->db->where('IDA',$IDA);
         $this->db->delete('Asignatura');
     }
+    
+    public function eliminar_Carrera($IDCarrera){
+        $this->db->where('idCarrera',$IDCarrera);
+        $this->db->delete('Carrera');
+    }
 }

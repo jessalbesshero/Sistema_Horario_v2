@@ -1,6 +1,6 @@
 <?php
 /*
- * home_Salon: vista principal de salón
+ * home_Carrrera: vista principal de carrera
  * @Sirio
  * @Jesús
  * To change this license header, choose License Headers in Project Properties.
@@ -12,38 +12,40 @@
 ?>
 <div id="body">
     <div class="container">
-        <h1  style="background-color: #dddddd">Salón</h1>
+        <h1  style="background-color: #dddddd">Carrera</h1>
 <table class="table table-striped" style="text-align:center" >
          <thead>
             <tr>
-                <th style="text-align:center" >ID del Salon</th>
-                <th style="text-align:center" >Numero de Salon</th>
-                <th style="text-align:center" >Carrera:</th>
-                <th style="text-align:center" >Agregar</th>
-                <th style="text-align:center" >Editar</th>
-                <th style="text-align:center" >Eliminar</th>
+                <th style="text-align:center" >Número clave de la carrera:</th>
+                <th style="text-align:center" >Nombre de la carrera:</th>
+                <th style="text-align:center" >Créditos de la carrera:</th>
+                <th style="text-align:center" >Jefe de la carrera:</th>
+                <th style="text-align:center" >Agregar:</th>
+                <th style="text-align:center" >Editar:</th>
+                <th style="text-align:center" >Eliminar:</th>
            </tr>
          </thead>
          <tbody>
-   <?php 
-                $query = $this->db->get('Salon');
+	<?php 
+                $query = $this->db->get('Carrera');
                  if ($query->num_rows() > 0){
                     if( $query != FALSE ){
                         foreach ($query ->result() as $row) {
                                 echo "<tr>";
-                                echo "<td>".$row->IDS."</td>"; 
-                                echo "<td>".$row->Salon."</td>"; 
-                                echo "<td>".$row->Horario."</td>";
+                                echo "<td>".$row->idCarrera."</td>"; 
+                                echo "<td>".$row->nombreCarrera."</td>"; 
+                                echo "<td>".$row->creditos."</td>";
+                                 echo "<td>".$row->jefeCarrera."</td>";
                                  echo "<td>";
-                                    echo "<a href='".base_url()."application/welcome/add_Carrera/".$row->IDS."' class='label label-info'>";
+                                    echo "<a href='".base_url()."application/welcome/add_Carrera/".$row->idCarrera."' class='label label-info'>";
                                     echo "<span class='glyphicon glyphicon-plus'></a></span>";  
                                 echo "</td>";
                                 echo "<td>";
-                                    echo "<a href='".base_url()."index.php/welcome/edit_Carrera/".$row->IDS."' class='label label-info'>";
+                                    echo "<a href='".base_url()."index.php/welcome/edit_Carrera/".$row->idCarrera."' class='label label-info'>";
                                     echo "<span class='glyphicon glyphicon-pencil'></a></span>";  
                                 echo "</td>";
                                 echo "<td>";
-                                    echo "<a href='".base_url()."index.php/welcome/delete_Carrera/".$row->IDS."' class='label label-danger'>";
+                                    echo "<a href='".base_url()."index.php/welcome/delete_Carrera/".$row->idCarrera."' class='label label-danger'>";
                                     echo "<span class='glyphicon glyphicon-remove'></a></span>";  
                                 echo "</td>";
                                 echo "</tr>"; ?>    
