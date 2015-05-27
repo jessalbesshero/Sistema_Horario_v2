@@ -55,7 +55,7 @@
 										echo "<tr>";
 										echo "<td style='text-align: center'>".$row->NRC."</td>";
 										echo "<td style='text-align: center'>".$row->IDA." "."</td>";
-                                                                                echo "<td style='text-align: center'>".$row->IDM."</td>";
+                                        echo "<td style='text-align: center'>".$row->IDM."</td>";
 										echo "</tr>";
 									}
 								}
@@ -76,7 +76,7 @@
 	);
         $this->db->where('NRC',$NRC);
         $this->db->delete('curso');
-	redirect('welcome/home_Curso');
+	redirect('welcome/vista_curso');
     }
 ?>	
 <?php $this->load->view('footer/footer_vista');?>

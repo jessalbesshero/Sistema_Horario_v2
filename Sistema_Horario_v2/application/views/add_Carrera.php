@@ -74,10 +74,10 @@
             $this->db->where('idCarrera',$idCarrera);
             $prueba= $this->db->get('Carrera');
             if($prueba->num_rows() > 0){
-                redirect('welcome/add_Carrera');
+                redirect('welcome/agregar_Carrera');
             }else{
                 $this->db->insert('Carrera',$data);
-                redirect('welcome/home_Carrera');
+                redirect('welcome/vista_Carrera');
             }
 	}
     ?>

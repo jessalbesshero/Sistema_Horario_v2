@@ -74,10 +74,10 @@
             $this->db->where('IDM',$IDM);
             $prueba= $this->db->get('Maestros');
             if($prueba->num_rows() > 0){
-		redirect('welcome/add_Maestro');
+		redirect('welcome/agregar_maestro');
             }else{
 		$this->db->insert('Maestros',$data);
-                redirect('welcome/home_Maestros');
+                redirect('vista_maestro');
             }
 	}
     ?>	

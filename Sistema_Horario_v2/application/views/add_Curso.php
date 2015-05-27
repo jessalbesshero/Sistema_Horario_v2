@@ -63,10 +63,10 @@
             $this->db->where('NRC',$NRC);
             $prueba= $this->db->get('Curso');
             if($prueba->num_rows() > 0){
-                redirect('welcome/add_Curso');
+                redirect('welcome/agregar_curso');
             }else{
                 $this->db->insert('Curso',$data);
-                redirect('welcome/home_Curso');
+                redirect('welcome/vista_curso');
             }
 	}
     ?>

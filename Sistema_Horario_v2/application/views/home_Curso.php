@@ -48,9 +48,9 @@
 							}else{
 								echo "<td>".$row->NRC."</td>";
 							}
-                                                        echo "<td><a href='".base_url()."index.php/welcome/add_Curso/".$row->NRC."' class='label label-info'><span class='glyphicon glyphicon-plus'></a></span></td>";
-							echo "<td><a href='".base_url()."index.php/welcome/edit_Curso/".$row->NRC."' class='label label-info'><span class='glyphicon glyphicon-pencil'></a></span></td>";
-							echo "<td><a href='".base_url()."index.php/welcome/delete_Curso/".$row->NRC."' class='label label-danger'><span class='glyphicon glyphicon-remove'></a></span></td>";
+                            echo "<td><a href='agregar_curso' class='label label-info'><span class='glyphicon glyphicon-plus'></a></span></td>";
+							echo "<td><a href='editar_curso' class='label label-info'><span class='glyphicon glyphicon-pencil'></a></span></td>";
+							echo "<td><a href='eliminar_curso' class='label label-danger'><span class='glyphicon glyphicon-remove'></a></span></td>";
 							echo "</tr>";
 						}
 					}

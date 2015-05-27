@@ -18,14 +18,33 @@ class Welcome extends CI_Controller {
         //Cambiar la página de inicio: Login------------------------------------
         public function index()
 	{
-            $this->load->view('view_Principal');
+            //$this->load->view('prueba_sirio');
             //$this->load->view('view_Principal');
+		$this->db->where('Logeado','1');
+ 		$prueba= $this->db->get('usuarios');
+ 		if($prueba->num_rows() == 1){
+ 			//redirect('welcome/home');
+ 			//$this->load->view('header/header_vista');
+			$this->load->view('autenticar');
+			echo "Entro al if";
+			//$this->load->view('footer/vista');
+ 		}else{
+	   		//$this->load->view('header/header_vista');
+			$this->load->view('autenticar');
+			echo "Entro al else";
+			//$this->load->view('footer/vista');
+	    }
 	}
         
+        public function prueba_sirio()
+	{
+            $this->load->view('prueba_sirio');
+            //$this->load->view('view_Principal');
+	}
         //Página principal------------------------------------------------------
         public function home(){
  		//$this->load->view('head/head_vista');
-                //$this->load->view('header/header_vista');
+        //$this->load->view('header/header_vista');
 		$this->load->view('view_Principal');
 		//$this->load->view('footer/footer_vista');
  	}
@@ -37,7 +56,8 @@ class Welcome extends CI_Controller {
 
         //Horario:--------------------------------------------------------------
 	public function vista_horario(){	
-		$this->load->view('view_Horario');
+		//$this->load->view('view_Horario');
+		$this->load->view('prueba_sirio');
 	}
 //las funciones get_info_horario() y web_service() quedan simplificadas en:
 //vista_horario() pero aún se esta tratando de modificar 
@@ -115,6 +135,20 @@ class Welcome extends CI_Controller {
  		$this->db->insert('horario', $data); 
  		echo 'EXITO!';
  	}
+
+ 	public function BHorario(){
+		$salon = $_POST['salon'];
+		$nrc  = $_POST['nrc'];
+
+		
+ 		$data = array(
+ 			'IDS' => $salon,
+ 			'NCR' => $nrc
+ 		);
+ 		$this->db->where($data);
+ 		$this->db->delete('horario'); 
+ 		echo 'EXITO!';
+ 	}
 //Función salir aún sin probar
 	public function salir(){
  		$this->db->where('Logeado','1');
@@ -144,8 +178,8 @@ class Welcome extends CI_Controller {
 		$this->load->view('add_Curso');
 	}
 
-        	public function editar_Curso(){
-		$NRC= $this->uri->segment(3);
+        	public function editar_curso(){
+		/*$NRC= $this->uri->segment(3);
 		$obtenerDatos= $this->modelo_Horarios->consulta_Curso($NRC);
 		if($obtenerDatos != False){
 			foreach ($obtenerDatos->result() as $key) {
@@ -159,14 +193,15 @@ class Welcome extends CI_Controller {
 				);
 		}else{
 			return FALSE;
-		}
-		$this->load->view('edit_Curso',$data);
+		}*/
+		//$this->load->view('edit_Curso',$data);
+		$this->load->view('edit_Curso');
 	}
         
-        public function eliminar_Curso(){
-			$NRC = $this->uri-> segment(3);
-			$this->modelo_Horarios->eliminar_Curso($NRC);
-			$this->load->view('home_Curso');
+        public function eliminar_curso(){
+			//$NRC = $this->uri-> segment(3);
+			//$this->modelo_Horarios->eliminar_Curso($NRC);
+			$this->load->view('delete_Curso');
 	}
         
 	public function vista_curso(){
@@ -201,13 +236,14 @@ class Welcome extends CI_Controller {
 		}else{
 			return FALSE;
 		}
-		$this->load->view('edit_Materias',$data);
+		//$this->load->view('edit_Materias',$data);
+		$this->load->view('edit_Materias');
 	}
         
         public function eliminar_Materias(){
 			$IDA = $this->uri-> segment(3);
 			$this->modelo_Horarios->eliminar_Asignatura($IDA);
-			$this->load->view('home_Materias');
+			$this->load->view('delete_Materias');
 	}
         
         public function vista_materias(){
@@ -216,12 +252,12 @@ class Welcome extends CI_Controller {
 
         //Maestro:--------------------------------------------------------------
 	public function agregar_maestro(){
-		$this->load->vie('add_Maestro');
+		$this->load->view('add_Maestro');
 	}
 
         public function editar_Maestro(){
 		$IDM = $this->uri->segment(3);
-		$obtenerDatos= $this->modelo_Horarios->obtenerDatosMa($IDM);
+		$obtenerDatos= $this->modelo_Horarios->consulta_Maestros($IDM);
 		if($obtenerDatos != FALSE){
 			foreach ($obtenerDatos->result() as $row){
 				
@@ -238,14 +274,14 @@ class Welcome extends CI_Controller {
 		}else{
 			return FALSE;
 		}
-		$this->load->view('edit_Maestro',$data);
-
+		//$this->load->view('edit_Maestro',$data);
+		$this->load->view('edit_Maestro');
 	}
         
         public function eliminar_Maestro(){
 		$IDM = $this->uri-> segment(3);
 		$this->modelo_Horarios->eliminar_Maestros($IDM);
-		$this->load->view('home_Maestro');
+		$this->load->view('delete_Maestro');
 	}
         
         public function vista_maestro(){
@@ -283,7 +319,7 @@ class Welcome extends CI_Controller {
         public function eliminar_Carrera(){
 			$NRC = $this->uri-> segment(3);
 			$this->modelo_Horarios->eliminar_Carrera($NRC);
-			$this->load->view('home_Carrera');
+			$this->load->view('delete_Carrera');
 	}
         
         public function vista_Carrera(){

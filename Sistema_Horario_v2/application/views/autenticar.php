@@ -33,7 +33,7 @@
 		if (isset($_POST['Entrar'])){
 			$User= $this->input->post('user');
 			$Password= $this->input->post('pass');
-			$this->principalmodel->login($User,$Password);
+			$this->modelo_Horarios->login($User,$Password);
 		}
 	?>
 	<?php $this->load->view('footer/footer_vista');?>

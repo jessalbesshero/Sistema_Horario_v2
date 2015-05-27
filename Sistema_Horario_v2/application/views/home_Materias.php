@@ -46,12 +46,16 @@ Vista Maestros:
                                  echo "<td>".$row->Horas."</td>";
                                  echo "<td>".$row->Requerimiento."</td>";
                                  echo "<td>".$row->Creditos."</td>";
-                                echo "<td>";
-                                    echo "<a href='".base_url()."index.php/welcome/editarMaterias/".$row->IDA."' class='label label-info'>";
+                                 echo "<td>";
+                                    echo "<a href='agregar_materias' class='label label-info'>";
                                     echo "<span class='glyphicon glyphicon-pencil'></a></span>";  
                                 echo "</td>";
                                 echo "<td>";
-                                    echo "<a href='".base_url()."index.php/welcome/eliminarMaterias/".$row->IDA."' class='label label-danger'>";
+                                    echo "<a href='editar_Materias' class='label label-info'>";
+                                    echo "<span class='glyphicon glyphicon-pencil'></a></span>";  
+                                echo "</td>";
+                                echo "<td>";
+                                    echo "<a href='eliminar_Materias' class='label label-danger'>";
                                     echo "<span class='glyphicon glyphicon-remove'></a></span>";  
                                 echo "</td>";
                                 echo "</tr>"; ?>    

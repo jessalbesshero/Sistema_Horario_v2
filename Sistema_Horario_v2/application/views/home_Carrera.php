@@ -37,15 +37,15 @@
                                 echo "<td>".$row->creditos."</td>";
                                  echo "<td>".$row->jefeCarrera."</td>";
                                  echo "<td>";
-                                    echo "<a href='".base_url()."application/welcome/add_Carrera/".$row->idCarrera."' class='label label-info'>";
+                                    echo "<a href='agregar_Carrera' class='label label-info'>";
                                     echo "<span class='glyphicon glyphicon-plus'></a></span>";  
                                 echo "</td>";
                                 echo "<td>";
-                                    echo "<a href='".base_url()."index.php/welcome/edit_Carrera/".$row->idCarrera."' class='label label-info'>";
+                                    echo "<a href='editar_Carrera' class='label label-info'>";
                                     echo "<span class='glyphicon glyphicon-pencil'></a></span>";  
                                 echo "</td>";
                                 echo "<td>";
-                                    echo "<a href='".base_url()."index.php/welcome/delete_Carrera/".$row->idCarrera."' class='label label-danger'>";
+                                    echo "<a href='eliminar_Carrera' class='label label-danger'>";
                                     echo "<span class='glyphicon glyphicon-remove'></a></span>";  
                                 echo "</td>";
                                 echo "</tr>"; ?>    

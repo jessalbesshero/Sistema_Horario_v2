@@ -31,15 +31,10 @@ class modelo_Horarios extends CI_Model {
                     $this->db->where('Usuario',$row->Usuario);
                     $this->db->update('usuarios',$data);
                     redirect('welcome/home');
-            //redirect(site_url("../application/controllers/welcome.php"));
-            //echo 'O entro aquí'.base_url();
-            //$inicio=$this->load->controller('welcome/home');
-            //redirect('welcome/home', 'location');
-            //redirect(base_url().$uri='welcome/home','location');
                 }
             }
         }else{
-            redirect(base_url().'', 'refresh');
+            redirect(base_url());
         }
     }
       

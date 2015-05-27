@@ -103,19 +103,20 @@
                     <span class="icon-bar"></span>
                 </button>-->
                 <!--<a class="navbar-brand" href='<?/=base_url('/welcome','acerca_de');?>'>Sistema Horario.v2</a>-->
-                <a class="navbar-brand" href="<?php$this->load->view('acerca_de');?>">Sistema Horario.v2</a>
+                <a class="navbar-brand" href='<?=base_url()?>welcome/acerca_de'>Sistema Horario.v2</a>
             </div>
         <!--  -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="<?php$this->load->view('principal_vista');?>"><i class="glyphicon glyphicon-home"></i>Principal</a></li>
-                    <li><a href='<?=base_url()."application/views/home_Maestros.php";?>'><i class="glyphicon glyphicon-book"></i>Maestros</a></li>
-                    <li><a href="#"><i class="glyphicon glyphicon-book"></i>Materias</a></li>
-                    <li><a href="#"><i class="glyphicon glyphicon-book"></i>Salon</a></li>
-                    <li><a href="#"><i class="glyphicon glyphicon-book"></i>Curso</a></li>
-                    <li><a href="#"><i class="glyphicon glyphicon-book"></i>Horario</a></li>
+                    <li><a href='<?=base_url()?>welcome/home'><i class="glyphicon glyphicon-home"></i>Principal</a></li>
+                    <li><a href='<?=base_url()?>welcome/vista_Carrera'><i class="glyphicon glyphicon-book"></i>Carrera</a></li>
+                    <li><a href='<?=base_url()?>welcome/vista_Maestro'><i class="glyphicon glyphicon-book"></i>Maestros</a></li>
+                    <li><a href='<?=base_url()?>welcome/vista_materias'><i class="glyphicon glyphicon-book"></i>Materias</a></li>
+                    <li><a href='<?=base_url()?>welcome/vista_Salon'><i class="glyphicon glyphicon-book"></i>Salon</a></li>
+                    <li><a href='<?=base_url()?>welcome/vista_curso'><i class="glyphicon glyphicon-book"></i>Curso</a></li>
+                    <li><a href='<?=base_url()?>welcome/vista_horario'><i class="glyphicon glyphicon-book"></i>Horario</a></li>
                 </ul>
             </div><!-- cierre del navbar-collapse -->
         </div>
